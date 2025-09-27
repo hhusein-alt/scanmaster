@@ -7,6 +7,100 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .analytics-page main {
+        padding: 0 15px;
+    }
+    
+    .analytics-page header {
+        padding: 10px 15px;
+    }
+    
+    .analytics-page header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .welcome-section {
+        padding: 25px 15px 15px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-section p {
+        font-size: 0.9rem;
+    }
+    
+    .tab {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .tab-icon {
+        font-size: 1rem;
+    }
+    
+    /* Make content sections responsive */
+    .metrics-grid, .data-grid, .integrations-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Adjust card padding */
+    .metric-card,
+    .data-card,
+    .integration-card {
+        padding: 15px;
+    }
+    
+    .streets-table {
+        overflow-x: auto;
+    }
+    
+    /* Touch-friendly buttons */
+    button, 
+    .filter-btn,
+    .export-btn {
+        min-height: 44px;
+        padding: 10px 15px;
+    }
+    
+    .map-container {
+        height: 250px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tab {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .tab-icon {
+        font-size: 0.9rem;
+    }
+    
+    .metric-card h3,
+    .data-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
 }
 
 .analytics-page header {
@@ -1357,6 +1451,17 @@
     padding: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+}
+
+.dashboard-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.dashboard-tabs::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
 .tab {
@@ -1369,6 +1474,8 @@
     background-color: rgba(40, 40, 60, 0.6);
     border-radius: 8px;
     gap: 10px;
+    flex-shrink: 0; /* Prevent tabs from shrinking */
+    touch-action: manipulation; /* Optimize for touch */
     font-weight: 500;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
